@@ -7,7 +7,7 @@ import "./App.css";
 function App() {
   const [word, setWord] = useState(Word);
   const [newWord, setNewWord] = useState(word[0]);
-  const [time, setTime] = useState(30);
+  const [time, setTime] = useState();
   const [inputValue, setInputValue] = useState("");
   const [disabled, setDisabled] = useState(true);
   const [correctCount, setCorrectCount] = useState(0);
@@ -45,10 +45,11 @@ function App() {
   useEffect(() => {
     if (time <= 30 && time !== 0 && disabled === false) {
       setTimeout(() => setTime((preTime) => preTime - 1), 1000);
-    } else if (time === 0) {
-      setDisabled(true);
     } else if (disabled) {
       setTime(30);
+    } else if (time === 0) {
+      setDisabled(true);
+      setTimeout(() => setInputValue(""), 2000);
     }
   }, [disabled, time]);
 
