@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.App {
+  display: flex;
+  gap: 2rem;
+}
+/* Typing */
+.typingBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.typing {
+  height: 300px;
+  width: 30vw;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: black;
+  color: white;
+}
+.typingWord {
+  font-size: 1.2rem;
+  padding: 1.5rem;
+}
+.timer {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(193, 179, 179, 0.8);
+}
+.timer > p {
+  font-size: 2rem;
+  padding: 4rem;
+  border-radius: 50%;
+  background: white;
+  color: red;
+}
+.typingInput-Button {
+  height: 12%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Result */
+.result {
+  width: 30vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}
+.resultHeading {
+  background: black;
+  padding: 1rem;
+  color: white;
+}
+.resultBody {
+  height: 100%;
+  display: flex;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+.correctResult {
+  width: 50%;
+  padding: 0.3rem;
+  text-align: center;
+}
+.incorrectResult {
+  width: 50%;
+  padding: 0.3rem;
+  text-align: center;
+}
