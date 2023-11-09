@@ -10,12 +10,13 @@ const Typing = ({
   disabled,
   handleInput,
   handleButton,
+  animation,
 }) => {
   return (
     <div className="typing">
       <h2 className="typingWord">{newWord}</h2>
       <span className="timer">
-        <p>{time}</p>
+        <p style={{ animation: animation !== null ? animation : "" }}>{time}</p>
       </span>
       <div className="typingInput-Button">
         <input

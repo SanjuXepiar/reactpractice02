@@ -5,7 +5,7 @@ import Result from "./components/Result";
 import Word from "./components/Word";
 import "./App.css";
 function App() {
-  const [word, setWord] = useState(Word);
+  let word = Word;
   const [newWord, setNewWord] = useState(word[0]);
   const [time, setTime] = useState();
   const [inputValue, setInputValue] = useState("");
@@ -13,10 +13,11 @@ function App() {
   const [correctCount, setCorrectCount] = useState(0);
   const [correctResult, setCorrectResult] = useState([]);
   const [incorrectResult, setIncorrectResult] = useState([]);
-
+  const [animation, setAnimation] = useState(null);
   const randomWord = Math.floor(Math.random() * word.length);
 
   //functions
+
   const checkResult = () => {
     if (inputValue.trim() === newWord) {
       setCorrectResult((preCorrect) => [...preCorrect, newWord]);
@@ -47,9 +48,13 @@ function App() {
       setTimeout(() => setTime((preTime) => preTime - 1), 1000);
     } else if (disabled) {
       setTime(30);
+      setAnimation(null);
     } else if (time === 0) {
       setDisabled(true);
       setTimeout(() => setInputValue(""), 2000);
+    }
+    if (time <= 10) {
+      setAnimation("timer 2s infinite");
     }
   }, [disabled, time]);
 
@@ -69,6 +74,7 @@ function App() {
             disabled={disabled}
             handleInput={handleInput}
             handleButton={handleButton}
+            animation={animation}
           />
         </Container>
       </>

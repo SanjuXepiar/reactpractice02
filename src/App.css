@@ -43,6 +43,11 @@ body {
 .timer > p {
   font-size: 2rem;
   padding: 4rem;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   background: white;
   color: red;
@@ -77,10 +82,32 @@ body {
 .correctResult {
   width: 50%;
   padding: 0.3rem;
-  text-align: center;
+  text-align: left;
+  text-indent: 10px;
+  color: green;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 .incorrectResult {
   width: 50%;
   padding: 0.3rem;
-  text-align: center;
+  text-align: left;
+  text-indent: 10px;
+  color: red;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+/* animation */
+@keyframes timer {
+  0% {
+    font-size: 2.5rem;
+  }
+  50% {
+    font-size: 1.5rem;
+  }
+  100% {
+    font-size: 2.5rem;
+  }
 }
