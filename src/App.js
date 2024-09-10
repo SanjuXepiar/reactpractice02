@@ -24,7 +24,7 @@ function App() {
       setCorrectCount((preCount) => preCount + 1);
       return;
     }
-    return setIncorrectResult((preInCorrect) => [...preInCorrect, inputValue]);
+    setIncorrectResult((preInCorrect) => [...preInCorrect, inputValue]);
   };
 
   const handleInput = (e) => {
