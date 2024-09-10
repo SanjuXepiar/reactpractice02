@@ -58,10 +58,6 @@ function App() {
     }
   }, [disabled, time]);
 
-  useEffect(() => {
-    setNewWord(word[randomWord]);
-  }, []);
-
   return (
     <div className="App">
       <>
